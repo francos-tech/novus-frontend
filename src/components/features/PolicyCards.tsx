@@ -95,7 +95,10 @@ export function PolicyCards({ quotes, onViewDetails, onDownloadQuote }: PolicyCa
         const data = policyData.cnfPolicyData.data;
         const account = data.account;
         const policy = data.policy;
-        const risk = policy.line.risk;
+        
+        // Normalize risk data to always be an array for consistent handling
+        const risks = Array.isArray(policy.line.risk) ? policy.line.risk : [policy.line.risk];
+        const primaryRisk = risks[0]; // Use first risk for card display
 
         return (
           <Card key={quote.id} className="hover:shadow-lg bg-summarycard transition-shadow duration-200">
@@ -166,16 +169,28 @@ export function PolicyCards({ quotes, onViewDetails, onDownloadQuote }: PolicyCa
 
               {/* Business Classification */}
               <div className="space-y-2">
-                <h4 className="text-sm font-medium text-foreground">Business Details</h4>
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-medium text-foreground">Business Details</h4>
+                  {risks.length > 1 && (
+                    <Badge variant="secondary" className="text-xs">
+                      +{risks.length - 1} more
+                    </Badge>
+                  )}
+                </div>
                 <div className="space-y-1">
                   <Badge variant="outline" className="text-xs">
-                    {risk.ClassDescription}
+                    {primaryRisk.ClassDescription}
                   </Badge>
                   <div className="text-xs text-muted-foreground">
-                    <span>Class Code: {risk.GLClassCode}</span>
+                    <span>Class Code: {primaryRisk.GLClassCode}</span>
                     <span className="mx-2">•</span>
-                    <span>Exposure: {formatCurrency(risk.Exposure)}</span>
+                    <span>Exposure: {formatCurrency(primaryRisk.Exposure)}</span>
                   </div>
+                  {risks.length > 1 && (
+                    <div className="text-xs text-blue-600 dark:text-blue-400">
+                      Total Exposure: {formatCurrency(risks.reduce((sum, r) => sum + parseFloat(r.Exposure), 0).toString())}
+                    </div>
+                  )}
                 </div>
               </div>
 

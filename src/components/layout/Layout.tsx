@@ -30,6 +30,7 @@ import {
   Target
 } from 'lucide-react'
 import { useTheme } from '@/hooks/useTheme'
+import { useQuotes } from '@/hooks/useQuotes'
 
 export default function Layout({
   children,
@@ -38,6 +39,7 @@ export default function Layout({
 }) {
   const { setTheme, isDark } = useTheme()
   const [showValues, setShowValues] = useState(true)
+  const { totalQuotes } = useQuotes()
   const pathname = usePathname()
   
   // Check if we're on a public route that should render without the full layout
@@ -107,7 +109,7 @@ export default function Layout({
           // { label: 'Compare Quotes', active: false }
         ],
         quickSummary: [
-          { icon: FileText, label: 'Active Quotes', value: showValues ? '0' : '**', color: 'bg-blue-500' },
+          { icon: FileText, label: 'Active Quotes', value: showValues ? totalQuotes : '**', color: 'bg-blue-500' },
           { icon: Users, label: 'Leads', value: showValues ? '0' : '**', color: 'bg-purple-500' },
           { icon: CheckSquare, label: 'Tasks', value: showValues ? '0' : '**', color: 'bg-green-500' },
           { icon: DollarSign, label: 'Finance', value: showValues ? '0' : '****', color: 'bg-green-500' },

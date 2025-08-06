@@ -67,7 +67,22 @@ export interface GeneralLiabilityQuote {
               IsFlatCharge: string;
               BaseRate: string;
               ClassPremium: string;
-            };
+            } | Array<{
+              LocationNumber: string;
+              Exposure: string;
+              RiskState: string;
+              GLClassCode: string;
+              ClassCategory: string;
+              ClassDescription: string;
+              Eligibility: string;
+              ClassGuidelinePDFPath: string;
+              PremiumBasis: string;
+              ClassMinPremium: string;
+              UnitsDivider: string;
+              IsFlatCharge: string;
+              BaseRate: string;
+              ClassPremium: string;
+            }>;
             optionalCoverages: {
               AdditionalInsured: {
                 Form: string;

@@ -37,6 +37,7 @@ export const useQuotes = () => {
     quoteHistory: quote.quoteHistory,
     isLoadingQuoteHistory,
     lastSubmittedQuoteId: quote.lastSubmittedQuoteId,
+    totalQuotes: quote.quoteHistory.length,
     clearLastSubmittedQuoteId,
   };
 };

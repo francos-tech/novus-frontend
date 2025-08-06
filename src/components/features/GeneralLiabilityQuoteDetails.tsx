@@ -11,6 +11,9 @@ interface GeneralLiabilityQuoteDetailsProps {
 export function GeneralLiabilityQuoteDetails({ quote, quoteId }: GeneralLiabilityQuoteDetailsProps) {
   const { cnfPolicyHeader, cnfPolicyData } = quote.cnfPolicyService;
   const { account, policy } = cnfPolicyData.data;
+  
+  // Normalize risk data to always be an array
+  const risks = Array.isArray(policy.line.risk) ? policy.line.risk : [policy.line.risk];
 
   const formatCurrency = (amount: string) => {
     if (!amount || amount === '0') return 'N/A';
@@ -126,7 +129,9 @@ export function GeneralLiabilityQuoteDetails({ quote, quoteId }: GeneralLiabilit
           </div>
           <div>
             <h3 className="font-medium text-muted-foreground mb-2">Deductible</h3>
-            <p className="text-foreground">{policy.line.Deductible}</p>
+            <p className="text-foreground">
+              {policy.line.Deductible === 'N/A' ? 'N/A' : `$${policy.line.Deductible}`}
+            </p>
           </div>
         </div>
       </Card>
@@ -181,33 +186,72 @@ export function GeneralLiabilityQuoteDetails({ quote, quoteId }: GeneralLiabilit
         <h2 className="text-xl font-semibold mb-4 flex items-center text-foreground">
           ⚠️ Risk Information
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-medium text-muted-foreground mb-2">Business Classification</h3>
-            <div className="space-y-2">
-              <p className="text-foreground font-medium">
-                {policy.line.risk.ClassDescription}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Class Code: {policy.line.risk.GLClassCode} - {policy.line.risk.ClassCategory}
-              </p>
-              <Badge className={getStatusColor(policy.line.risk.Eligibility)}>
-                {policy.line.risk.Eligibility}
-              </Badge>
+        <div className="space-y-6">
+          {risks.map((riskItem, index) => (
+            <div key={index} className="p-4 bg-muted/50 rounded-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-medium text-muted-foreground mb-2">
+                    Business Classification {risks.length > 1 && `#${index + 1}`}
+                  </h3>
+                  <div className="space-y-2">
+                    <p className="text-foreground font-medium">
+                      {riskItem.ClassDescription}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Class Code: {riskItem.GLClassCode} - {riskItem.ClassCategory}
+                    </p>
+                    <Badge className={getStatusColor(riskItem.Eligibility)}>
+                      {riskItem.Eligibility}
+                    </Badge>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-medium text-muted-foreground mb-2">Premium Calculation</h3>
+                  <div className="space-y-2">
+                    <p className="text-foreground">
+                      Exposure: {formatCurrency(riskItem.Exposure)} ({riskItem.PremiumBasis})
+                    </p>
+                    <p className="text-muted-foreground">Base Rate: {riskItem.BaseRate}%</p>
+                    <p className="text-muted-foreground">Class Premium: {formatCurrency(riskItem.ClassPremium)}</p>
+                    <p className="text-muted-foreground">Units Divider: {riskItem.UnitsDivider}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div>
-            <h3 className="font-medium text-muted-foreground mb-2">Premium Calculation</h3>
-            <div className="space-y-2">
-              <p className="text-foreground">
-                Exposure: {formatCurrency(policy.line.risk.Exposure)} ({policy.line.risk.PremiumBasis})
-              </p>
-              <p className="text-muted-foreground">Base Rate: {policy.line.risk.BaseRate}%</p>
-              <p className="text-muted-foreground">Class Premium: {formatCurrency(policy.line.risk.ClassPremium)}</p>
-              <p className="text-muted-foreground">Units Divider: {policy.line.risk.UnitsDivider}</p>
-            </div>
-          </div>
+          ))}
         </div>
+        
+        {/* Risk Summary */}
+        {risks.length > 1 && (
+          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
+            <h3 className="font-medium text-foreground mb-3">📊 Risk Summary</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              <div>
+                <span className="text-muted-foreground">Total Risks:</span>
+                <p className="font-medium text-foreground">{risks.length}</p>
+              </div>
+              <div>
+                <span className="text-muted-foreground">Total Exposure:</span>
+                <p className="font-medium text-foreground">
+                  {formatCurrency(risks.reduce((sum, risk) => sum + parseFloat(risk.Exposure), 0).toString())}
+                </p>
+              </div>
+              <div>
+                <span className="text-muted-foreground">Combined Class Premium:</span>
+                <p className="font-medium text-green-600 dark:text-green-400">
+                  {formatCurrency(risks.reduce((sum, risk) => sum + parseFloat(risk.ClassPremium), 0).toString())}
+                </p>
+              </div>
+              <div>
+                <span className="text-muted-foreground">Categories:</span>
+                <p className="font-medium text-foreground">
+                  {Array.from(new Set(risks.map(r => r.ClassCategory))).join(', ')}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </Card>
 
       {/* Premium Breakdown */}

@@ -19,7 +19,7 @@ import { useQuotes } from '@/hooks/useQuotes'
 export default function QuotesPage() {
   const router = useRouter()
   const [activeView, setActiveView] = useState('policies')
-  const { getQuoteHistory, quoteHistory, isLoadingQuoteHistory } = useQuotes()
+  const { getQuoteHistory, quoteHistory, isLoadingQuoteHistory, totalQuotes } = useQuotes()
 
   useEffect(() => {
     getQuoteHistory({
@@ -47,7 +47,7 @@ export default function QuotesPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         <MetricCard
           title="Active Quotes"
-          value="0"
+          value={totalQuotes.toString()}
           subtitle="In progress"
           icon={Clock}
         />
