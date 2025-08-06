@@ -1,84 +1,30 @@
-import { useState, useEffect } from 'react'
+import { useCallback } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleTheme } from '@/redux/theme/themeSlice'
+import type { RootState } from '@/redux/store'
 
 export function useTheme() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-  const [isInitialized, setIsInitialized] = useState(false)
+  const dispatch = useDispatch()
+  const theme = useSelector((state: RootState) => state.theme.theme)
 
-  useEffect(() => {
-    // Check if we're in the browser
-    if (typeof window === 'undefined') return
-
-    try {
-      const saved = localStorage.getItem('theme')
-      
-      // Determine initial theme
-      let shouldBeDark = false
-      if (saved === 'dark') {
-        shouldBeDark = true
-      } else if (saved === 'light') {
-        shouldBeDark = false
-      } else {
-        // No saved preference, check system preference
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-        shouldBeDark = systemPrefersDark
-        // Save the detected preference
-        localStorage.setItem('theme', shouldBeDark ? 'dark' : 'light')
+  const setTheme = useCallback(
+    (newTheme: 'light' | 'dark') => {
+      if (newTheme !== theme) {
+        dispatch(toggleTheme())
       }
-      
-      setIsDarkMode(shouldBeDark)
-      setIsInitialized(true)
-      
-      // Apply theme to document root
-      if (shouldBeDark) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    } catch (error) {
-      console.error('Error initializing theme:', error)
-      setIsInitialized(true)
-    }
-  }, [])
+    },
+    [dispatch, theme]
+  )
 
-  const toggleTheme = () => {
-    if (typeof window === 'undefined') return
-    
-    try {
-      const newTheme = !isDarkMode
-      
-      setIsDarkMode(newTheme)
-      localStorage.setItem('theme', newTheme ? 'dark' : 'light')
-      
-      // Apply theme to document root
-      if (newTheme) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    } catch (error) {
-      console.error('Error toggling theme:', error)
-    }
-  }
-
-  const setTheme = (theme: 'light' | 'dark') => {
-    if (typeof window === 'undefined') return
-    
-    const isDark = theme === 'dark'
-    setIsDarkMode(isDark)
-    localStorage.setItem('theme', theme)
-    
-    // Apply theme to document root
-    if (isDark) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }
+  const toggle = useCallback(() => {
+    dispatch(toggleTheme())
+  }, [dispatch])
 
   return {
-    isDarkMode,
-    isInitialized,
-    toggleTheme,
-    setTheme
+    theme,
+    setTheme,
+    toggleTheme: toggle,
+    isDark: theme === 'dark',
+    isLight: theme === 'light',
   }
-} 
+}

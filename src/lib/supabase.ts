@@ -1,15 +1,33 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.SUPABASE_URL || ''
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY || ''
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE || ''
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables')
+if (!process.env.SUPABASE_URL) {
+  throw new Error('Missing Supabase URL')
 }
 
-// Client for client-side operations (with Row Level Security)
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+if (!process.env.SUPABASE_ANON_KEY) {
+  throw new Error('Missing Supabase Anon Key')
+}
 
-// Admin client for server-side operations (bypasses RLS)
-export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceRoleKey)
+// Public client for browser use
+export const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY,
+  {
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+    },
+  }
+)
+
+// Admin client for API routes (server-side only)
+export const supabaseAdmin = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE || process.env.SUPABASE_ANON_KEY,
+  {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  }
+) 

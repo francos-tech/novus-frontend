@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import MetricCard from '@/components/MetricCard'
+import MetricCard from '@/components/ui/MetricCard'
 import { 
   Clock, 
   CheckCircle, 
@@ -42,6 +43,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 
 export default function QuotesPage() {
+  const router = useRouter()
   const [activeView, setActiveView] = useState('board')
   const [selectedQuote, setSelectedQuote] = useState<any>(null)
   const [showAPIModal, setShowAPIModal] = useState(false)
@@ -187,8 +189,8 @@ export default function QuotesPage() {
 
   const handleViewQuote = (quote: any) => {
     console.log('Visualizando cotação:', quote.id)
-    setSelectedQuoteForView(quote)
-    setShowQuoteDetailModal(true)
+    // Navigate to the new quote details page
+    router.push(`/quotes/${quote.id}`)
   }
 
   const handleEditQuote = (quote: any) => {

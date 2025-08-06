@@ -1,0 +1,1096 @@
+{
+  "glClassCodes": [
+    {
+      "code": "10010",
+      "description": "Apartment Buildings - 3 or fewer families"
+    },
+    {
+      "code": "10015",
+      "description": "Apartment Buildings - 4-6 families"
+    },
+    {
+      "code": "10020",
+      "description": "Apartment Buildings - 7-12 families"
+    },
+    {
+      "code": "10025",
+      "description": "Apartment Buildings - 13-20 families"
+    },
+    {
+      "code": "10030",
+      "description": "Apartment Buildings - 21-50 families"
+    },
+    {
+      "code": "10035",
+      "description": "Apartment Buildings - 51-100 families"
+    },
+    {
+      "code": "10040",
+      "description": "Apartment Buildings - 101-300 families"
+    },
+    {
+      "code": "10045",
+      "description": "Apartment Buildings - 301+ families"
+    },
+    {
+      "code": "10050",
+      "description": "Hotels or Motels - 3 or fewer stories"
+    },
+    {
+      "code": "10055",
+      "description": "Hotels or Motels - 4-6 stories"
+    },
+    {
+      "code": "10060",
+      "description": "Hotels or Motels - 7-12 stories"
+    },
+    {
+      "code": "10065",
+      "description": "Hotels or Motels - 13-20 stories"
+    },
+    {
+      "code": "10070",
+      "description": "Hotels or Motels - 21+ stories"
+    },
+    {
+      "code": "10075",
+      "description": "Hotels or Motels - 3 or fewer stories with restaurant"
+    },
+    {
+      "code": "10080",
+      "description": "Hotels or Motels - 4-6 stories with restaurant"
+    },
+    {
+      "code": "10085",
+      "description": "Hotels or Motels - 7-12 stories with restaurant"
+    },
+    {
+      "code": "10090",
+      "description": "Hotels or Motels - 13-20 stories with restaurant"
+    },
+    {
+      "code": "10095",
+      "description": "Hotels or Motels - 21+ stories with restaurant"
+    },
+    {
+      "code": "10100",
+      "description": "Office Buildings - 3 or fewer stories"
+    },
+    {
+      "code": "10105",
+      "description": "Office Buildings - 4-6 stories"
+    },
+    {
+      "code": "10110",
+      "description": "Office Buildings - 7-12 stories"
+    },
+    {
+      "code": "10115",
+      "description": "Office Buildings - 13-20 stories"
+    },
+    {
+      "code": "10120",
+      "description": "Office Buildings - 21+ stories"
+    },
+    {
+      "code": "10125",
+      "description": "Retail Stores - 3 or fewer stories"
+    },
+    {
+      "code": "10130",
+      "description": "Retail Stores - 4-6 stories"
+    },
+    {
+      "code": "10135",
+      "description": "Retail Stores - 7-12 stories"
+    },
+    {
+      "code": "10140",
+      "description": "Retail Stores - 13-20 stories"
+    },
+    {
+      "code": "10145",
+      "description": "Retail Stores - 21+ stories"
+    },
+    {
+      "code": "10150",
+      "description": "Restaurants - 3 or fewer stories"
+    },
+    {
+      "code": "10155",
+      "description": "Restaurants - 4-6 stories"
+    },
+    {
+      "code": "10160",
+      "description": "Restaurants - 7-12 stories"
+    },
+    {
+      "code": "10165",
+      "description": "Restaurants - 13-20 stories"
+    },
+    {
+      "code": "10170",
+      "description": "Restaurants - 21+ stories"
+    },
+    {
+      "code": "10175",
+      "description": "Banks or Financial Institutions"
+    },
+    {
+      "code": "10180",
+      "description": "Churches or Religious Institutions"
+    },
+    {
+      "code": "10185",
+      "description": "Schools or Educational Institutions"
+    },
+    {
+      "code": "10190",
+      "description": "Hospitals or Medical Facilities"
+    },
+    {
+      "code": "10195",
+      "description": "Nursing Homes or Assisted Living"
+    },
+    {
+      "code": "10200",
+      "description": "Manufacturing - Food Products"
+    },
+    {
+      "code": "10205",
+      "description": "Manufacturing - Textiles"
+    },
+    {
+      "code": "10210",
+      "description": "Manufacturing - Wood Products"
+    },
+    {
+      "code": "10215",
+      "description": "Manufacturing - Paper Products"
+    },
+    {
+      "code": "10220",
+      "description": "Manufacturing - Chemicals"
+    },
+    {
+      "code": "10225",
+      "description": "Manufacturing - Metals"
+    },
+    {
+      "code": "10230",
+      "description": "Manufacturing - Machinery"
+    },
+    {
+      "code": "10235",
+      "description": "Manufacturing - Electronics"
+    },
+    {
+      "code": "10240",
+      "description": "Manufacturing - Transportation Equipment"
+    },
+    {
+      "code": "10245",
+      "description": "Manufacturing - Furniture"
+    },
+    {
+      "code": "10250",
+      "description": "Manufacturing - Miscellaneous"
+    },
+    {
+      "code": "10255",
+      "description": "Contractors - Building Construction"
+    },
+    {
+      "code": "10260",
+      "description": "Contractors - Heavy Construction"
+    },
+    {
+      "code": "10265",
+      "description": "Contractors - Special Trade"
+    },
+    {
+      "code": "10270",
+      "description": "Contractors - Electrical"
+    },
+    {
+      "code": "10275",
+      "description": "Contractors - Plumbing"
+    },
+    {
+      "code": "10280",
+      "description": "Contractors - Heating, Ventilation, AC"
+    },
+    {
+      "code": "10285",
+      "description": "Contractors - Roofing"
+    },
+    {
+      "code": "10290",
+      "description": "Contractors - Painting"
+    },
+    {
+      "code": "10295",
+      "description": "Contractors - Flooring"
+    },
+    {
+      "code": "10300",
+      "description": "Contractors - Landscaping"
+    },
+    {
+      "code": "10305",
+      "description": "Contractors - Masonry"
+    },
+    {
+      "code": "10310",
+      "description": "Contractors - Carpentry"
+    },
+    {
+      "code": "10315",
+      "description": "Contractors - Concrete"
+    },
+    {
+      "code": "10320",
+      "description": "Contractors - Demolition"
+    },
+    {
+      "code": "10325",
+      "description": "Contractors - Excavation"
+    },
+    {
+      "code": "10330",
+      "description": "Contractors - Foundation"
+    },
+    {
+      "code": "10335",
+      "description": "Contractors - Glass"
+    },
+    {
+      "code": "10340",
+      "description": "Contractors - Insulation"
+    },
+    {
+      "code": "10345",
+      "description": "Contractors - Lathing"
+    },
+    {
+      "code": "10350",
+      "description": "Contractors - Ornamental Iron"
+    },
+    {
+      "code": "10355",
+      "description": "Contractors - Plastering"
+    },
+    {
+      "code": "10360",
+      "description": "Contractors - Sheet Metal"
+    },
+    {
+      "code": "10365",
+      "description": "Contractors - Stone"
+    },
+    {
+      "code": "10370",
+      "description": "Contractors - Tile"
+    },
+    {
+      "code": "10375",
+      "description": "Contractors - Waterproofing"
+    },
+    {
+      "code": "10380",
+      "description": "Contractors - Welding"
+    },
+    {
+      "code": "10385",
+      "description": "Contractors - Miscellaneous"
+    },
+    {
+      "code": "10390",
+      "description": "Wholesalers - Food Products"
+    },
+    {
+      "code": "10395",
+      "description": "Wholesalers - Textiles"
+    },
+    {
+      "code": "10400",
+      "description": "Wholesalers - Wood Products"
+    },
+    {
+      "code": "10405",
+      "description": "Wholesalers - Paper Products"
+    },
+    {
+      "code": "10410",
+      "description": "Wholesalers - Chemicals"
+    },
+    {
+      "code": "10415",
+      "description": "Wholesalers - Metals"
+    },
+    {
+      "code": "10420",
+      "description": "Wholesalers - Machinery"
+    },
+    {
+      "code": "10425",
+      "description": "Wholesalers - Electronics"
+    },
+    {
+      "code": "10430",
+      "description": "Wholesalers - Transportation Equipment"
+    },
+    {
+      "code": "10435",
+      "description": "Wholesalers - Furniture"
+    },
+    {
+      "code": "10440",
+      "description": "Wholesalers - Miscellaneous"
+    },
+    {
+      "code": "10445",
+      "description": "Warehouses - Food Products"
+    },
+    {
+      "code": "10450",
+      "description": "Warehouses - Textiles"
+    },
+    {
+      "code": "10455",
+      "description": "Warehouses - Wood Products"
+    },
+    {
+      "code": "10460",
+      "description": "Warehouses - Paper Products"
+    },
+    {
+      "code": "10465",
+      "description": "Warehouses - Chemicals"
+    },
+    {
+      "code": "10470",
+      "description": "Warehouses - Metals"
+    },
+    {
+      "code": "10475",
+      "description": "Warehouses - Machinery"
+    },
+    {
+      "code": "10480",
+      "description": "Warehouses - Electronics"
+    },
+    {
+      "code": "10485",
+      "description": "Warehouses - Transportation Equipment"
+    },
+    {
+      "code": "10490",
+      "description": "Warehouses - Furniture"
+    },
+    {
+      "code": "10495",
+      "description": "Warehouses - Miscellaneous"
+    },
+    {
+      "code": "10500",
+      "description": "Trucking - Local"
+    },
+    {
+      "code": "10505",
+      "description": "Trucking - Long Distance"
+    },
+    {
+      "code": "10510",
+      "description": "Trucking - Storage"
+    },
+    {
+      "code": "10515",
+      "description": "Trucking - Terminal"
+    },
+    {
+      "code": "10520",
+      "description": "Trucking - Miscellaneous"
+    },
+    {
+      "code": "10525",
+      "description": "Automobile Dealers"
+    },
+    {
+      "code": "10530",
+      "description": "Automobile Service Stations"
+    },
+    {
+      "code": "10535",
+      "description": "Automobile Repair Shops"
+    },
+    {
+      "code": "10540",
+      "description": "Automobile Parking"
+    },
+    {
+      "code": "10545",
+      "description": "Automobile Miscellaneous"
+    },
+    {
+      "code": "10550",
+      "description": "Garages - Public"
+    },
+    {
+      "code": "10555",
+      "description": "Garages - Private"
+    },
+    {
+      "code": "10560",
+      "description": "Garages - Storage"
+    },
+    {
+      "code": "10565",
+      "description": "Garages - Miscellaneous"
+    },
+    {
+      "code": "10570",
+      "description": "Service Stations - Gasoline"
+    },
+    {
+      "code": "10575",
+      "description": "Service Stations - Diesel"
+    },
+    {
+      "code": "10580",
+      "description": "Service Stations - LPG"
+    },
+    {
+      "code": "10585",
+      "description": "Service Stations - Miscellaneous"
+    },
+    {
+      "code": "10590",
+      "description": "Amusement Parks"
+    },
+    {
+      "code": "10595",
+      "description": "Bowling Alleys"
+    },
+    {
+      "code": "10600",
+      "description": "Golf Courses"
+    },
+    {
+      "code": "10605",
+      "description": "Health Clubs"
+    },
+    {
+      "code": "10610",
+      "description": "Movie Theaters"
+    },
+    {
+      "code": "10615",
+      "description": "Night Clubs"
+    },
+    {
+      "code": "10620",
+      "description": "Race Tracks"
+    },
+    {
+      "code": "10625",
+      "description": "Recreation Centers"
+    },
+    {
+      "code": "10630",
+      "description": "Skating Rinks"
+    },
+    {
+      "code": "10635",
+      "description": "Swimming Pools"
+    },
+    {
+      "code": "10640",
+      "description": "Tennis Courts"
+    },
+    {
+      "code": "10645",
+      "description": "Miscellaneous Amusement"
+    },
+    {
+      "code": "10650",
+      "description": "Agricultural - Farms"
+    },
+    {
+      "code": "10655",
+      "description": "Agricultural - Nurseries"
+    },
+    {
+      "code": "10660",
+      "description": "Agricultural - Greenhouses"
+    },
+    {
+      "code": "10665",
+      "description": "Agricultural - Miscellaneous"
+    },
+    {
+      "code": "10670",
+      "description": "Mining - Coal"
+    },
+    {
+      "code": "10675",
+      "description": "Mining - Metal"
+    },
+    {
+      "code": "10680",
+      "description": "Mining - Non-Metal"
+    },
+    {
+      "code": "10685",
+      "description": "Mining - Oil & Gas"
+    },
+    {
+      "code": "10690",
+      "description": "Mining - Miscellaneous"
+    },
+    {
+      "code": "10695",
+      "description": "Utilities - Electric"
+    },
+    {
+      "code": "10700",
+      "description": "Utilities - Gas"
+    },
+    {
+      "code": "10705",
+      "description": "Utilities - Water"
+    },
+    {
+      "code": "10710",
+      "description": "Utilities - Telephone"
+    },
+    {
+      "code": "10715",
+      "description": "Utilities - Miscellaneous"
+    },
+    {
+      "code": "10720",
+      "description": "Communication - Radio"
+    },
+    {
+      "code": "10725",
+      "description": "Communication - Television"
+    },
+    {
+      "code": "10730",
+      "description": "Communication - Newspapers"
+    },
+    {
+      "code": "10735",
+      "description": "Communication - Magazines"
+    },
+    {
+      "code": "10740",
+      "description": "Communication - Miscellaneous"
+    },
+    {
+      "code": "10745",
+      "description": "Transportation - Airlines"
+    },
+    {
+      "code": "10750",
+      "description": "Transportation - Bus Lines"
+    },
+    {
+      "code": "10755",
+      "description": "Transportation - Railroads"
+    },
+    {
+      "code": "10760",
+      "description": "Transportation - Taxicabs"
+    },
+    {
+      "code": "10765",
+      "description": "Transportation - Miscellaneous"
+    },
+    {
+      "code": "10770",
+      "description": "Storage - Cold Storage"
+    },
+    {
+      "code": "10775",
+      "description": "Storage - Grain"
+    },
+    {
+      "code": "10780",
+      "description": "Storage - Petroleum"
+    },
+    {
+      "code": "10785",
+      "description": "Storage - Miscellaneous"
+    },
+    {
+      "code": "10790",
+      "description": "Laboratories - Medical"
+    },
+    {
+      "code": "10795",
+      "description": "Laboratories - Research"
+    },
+    {
+      "code": "10800",
+      "description": "Laboratories - Testing"
+    },
+    {
+      "code": "10805",
+      "description": "Laboratories - Miscellaneous"
+    },
+    {
+      "code": "10810",
+      "description": "Funeral Homes"
+    },
+    {
+      "code": "10815",
+      "description": "Cemeteries"
+    },
+    {
+      "code": "10820",
+      "description": "Mortuaries"
+    },
+    {
+      "code": "10825",
+      "description": "Miscellaneous Mortuary"
+    },
+    {
+      "code": "10830",
+      "description": "Beauty Shops"
+    },
+    {
+      "code": "10835",
+      "description": "Barber Shops"
+    },
+    {
+      "code": "10840",
+      "description": "Beauty & Barber Schools"
+    },
+    {
+      "code": "10845",
+      "description": "Miscellaneous Beauty & Barber"
+    },
+    {
+      "code": "10850",
+      "description": "Laundries - Self Service"
+    },
+    {
+      "code": "10855",
+      "description": "Laundries - Commercial"
+    },
+    {
+      "code": "10860",
+      "description": "Laundries - Industrial"
+    },
+    {
+      "code": "10865",
+      "description": "Laundries - Miscellaneous"
+    },
+    {
+      "code": "10870",
+      "description": "Dry Cleaners"
+    },
+    {
+      "code": "10875",
+      "description": "Tailors"
+    },
+    {
+      "code": "10880",
+      "description": "Dressmakers"
+    },
+    {
+      "code": "10885",
+      "description": "Miscellaneous Clothing"
+    },
+    {
+      "code": "10890",
+      "description": "Photographers"
+    },
+    {
+      "code": "10895",
+      "description": "Photo Finishing"
+    },
+    {
+      "code": "10900",
+      "description": "Miscellaneous Photography"
+    },
+    {
+      "code": "10905",
+      "description": "Printers"
+    },
+    {
+      "code": "10910",
+      "description": "Publishers"
+    },
+    {
+      "code": "10915",
+      "description": "Miscellaneous Printing"
+    },
+    {
+      "code": "10920",
+      "description": "Jewelers"
+    },
+    {
+      "code": "10925",
+      "description": "Watchmakers"
+    },
+    {
+      "code": "10930",
+      "description": "Miscellaneous Jewelry"
+    },
+    {
+      "code": "10935",
+      "description": "Optometrists"
+    },
+    {
+      "code": "10940",
+      "description": "Opticians"
+    },
+    {
+      "code": "10945",
+      "description": "Miscellaneous Optical"
+    },
+    {
+      "code": "10950",
+      "description": "Dentists"
+    },
+    {
+      "code": "10955",
+      "description": "Dental Laboratories"
+    },
+    {
+      "code": "10960",
+      "description": "Miscellaneous Dental"
+    },
+    {
+      "code": "10965",
+      "description": "Physicians & Surgeons"
+    },
+    {
+      "code": "10970",
+      "description": "Osteopaths"
+    },
+    {
+      "code": "10975",
+      "description": "Chiropractors"
+    },
+    {
+      "code": "10980",
+      "description": "Psychiatrists"
+    },
+    {
+      "code": "10985",
+      "description": "Psychologists"
+    },
+    {
+      "code": "10990",
+      "description": "Miscellaneous Medical"
+    },
+    {
+      "code": "10995",
+      "description": "Hospitals - General"
+    },
+    {
+      "code": "11000",
+      "description": "Hospitals - Specialized"
+    },
+    {
+      "code": "11005",
+      "description": "Hospitals - Psychiatric"
+    },
+    {
+      "code": "11010",
+      "description": "Hospitals - Miscellaneous"
+    },
+    {
+      "code": "11015",
+      "description": "Nursing Homes"
+    },
+    {
+      "code": "11020",
+      "description": "Convalescent Homes"
+    },
+    {
+      "code": "11025",
+      "description": "Rest Homes"
+    },
+    {
+      "code": "11030",
+      "description": "Miscellaneous Nursing"
+    },
+    {
+      "code": "11035",
+      "description": "Clinics - Medical"
+    },
+    {
+      "code": "11040",
+      "description": "Clinics - Dental"
+    },
+    {
+      "code": "11045",
+      "description": "Clinics - Psychiatric"
+    },
+    {
+      "code": "11050",
+      "description": "Clinics - Miscellaneous"
+    },
+    {
+      "code": "11055",
+      "description": "Laboratories - Medical"
+    },
+    {
+      "code": "11060",
+      "description": "Laboratories - Dental"
+    },
+    {
+      "code": "11065",
+      "description": "Laboratories - Research"
+    },
+    {
+      "code": "11070",
+      "description": "Laboratories - Testing"
+    },
+    {
+      "code": "11075",
+      "description": "Laboratories - Miscellaneous"
+    },
+    {
+      "code": "11080",
+      "description": "Blood Banks"
+    },
+    {
+      "code": "11085",
+      "description": "Organ Banks"
+    },
+    {
+      "code": "11090",
+      "description": "Miscellaneous Banks"
+    },
+    {
+      "code": "11095",
+      "description": "Ambulance Services"
+    },
+    {
+      "code": "11100",
+      "description": "Emergency Services"
+    },
+    {
+      "code": "11105",
+      "description": "Miscellaneous Emergency"
+    },
+    {
+      "code": "11110",
+      "description": "Medical Equipment - Sales"
+    },
+    {
+      "code": "11115",
+      "description": "Medical Equipment - Rental"
+    },
+    {
+      "code": "11120",
+      "description": "Medical Equipment - Service"
+    },
+    {
+      "code": "11125",
+      "description": "Medical Equipment - Miscellaneous"
+    },
+    {
+      "code": "11130",
+      "description": "Pharmacies"
+    },
+    {
+      "code": "11135",
+      "description": "Drug Stores"
+    },
+    {
+      "code": "11140",
+      "description": "Miscellaneous Pharmaceutical"
+    },
+    {
+      "code": "11145",
+      "description": "Veterinarians"
+    },
+    {
+      "code": "11150",
+      "description": "Veterinary Hospitals"
+    },
+    {
+      "code": "11155",
+      "description": "Veterinary Clinics"
+    },
+    {
+      "code": "11160",
+      "description": "Miscellaneous Veterinary"
+    },
+    {
+      "code": "11165",
+      "description": "Accountants"
+    },
+    {
+      "code": "11170",
+      "description": "Attorneys"
+    },
+    {
+      "code": "11175",
+      "description": "Architects"
+    },
+    {
+      "code": "11180",
+      "description": "Engineers"
+    },
+    {
+      "code": "11185",
+      "description": "Consultants"
+    },
+    {
+      "code": "11190",
+      "description": "Miscellaneous Professional"
+    },
+    {
+      "code": "11195",
+      "description": "Real Estate - Sales"
+    },
+    {
+      "code": "11200",
+      "description": "Real Estate - Management"
+    },
+    {
+      "code": "11205",
+      "description": "Real Estate - Development"
+    },
+    {
+      "code": "11210",
+      "description": "Real Estate - Appraisal"
+    },
+    {
+      "code": "11215",
+      "description": "Real Estate - Miscellaneous"
+    },
+    {
+      "code": "11220",
+      "description": "Insurance - Agents"
+    },
+    {
+      "code": "11225",
+      "description": "Insurance - Brokers"
+    },
+    {
+      "code": "11230",
+      "description": "Insurance - Adjusters"
+    },
+    {
+      "code": "11235",
+      "description": "Insurance - Miscellaneous"
+    },
+    {
+      "code": "11240",
+      "description": "Advertising Agencies"
+    },
+    {
+      "code": "11245",
+      "description": "Public Relations"
+    },
+    {
+      "code": "11250",
+      "description": "Marketing"
+    },
+    {
+      "code": "11255",
+      "description": "Miscellaneous Advertising"
+    },
+    {
+      "code": "11260",
+      "description": "Employment Agencies"
+    },
+    {
+      "code": "11265",
+      "description": "Temporary Help"
+    },
+    {
+      "code": "11270",
+      "description": "Miscellaneous Employment"
+    },
+    {
+      "code": "11275",
+      "description": "Collection Agencies"
+    },
+    {
+      "code": "11280",
+      "description": "Credit Reporting"
+    },
+    {
+      "code": "11285",
+      "description": "Miscellaneous Financial"
+    },
+    {
+      "code": "11290",
+      "description": "Security Services"
+    },
+    {
+      "code": "11295",
+      "description": "Detective Agencies"
+    },
+    {
+      "code": "11300",
+      "description": "Miscellaneous Security"
+    },
+    {
+      "code": "11305",
+      "description": "Janitorial Services"
+    },
+    {
+      "code": "11310",
+      "description": "Window Cleaning"
+    },
+    {
+      "code": "11315",
+      "description": "Carpet Cleaning"
+    },
+    {
+      "code": "11320",
+      "description": "Miscellaneous Cleaning"
+    },
+    {
+      "code": "11325",
+      "description": "Pest Control"
+    },
+    {
+      "code": "11330",
+      "description": "Exterminators"
+    },
+    {
+      "code": "11335",
+      "description": "Miscellaneous Pest Control"
+    },
+    {
+      "code": "11340",
+      "description": "Landscaping"
+    },
+    {
+      "code": "11345",
+      "description": "Tree Trimming"
+    },
+    {
+      "code": "11350",
+      "description": "Miscellaneous Landscaping"
+    },
+    {
+      "code": "11355",
+      "description": "Swimming Pool - Sales"
+    },
+    {
+      "code": "11360",
+      "description": "Swimming Pool - Service"
+    },
+    {
+      "code": "11365",
+      "description": "Swimming Pool - Miscellaneous"
+    },
+    {
+      "code": "11370",
+      "description": "Miscellaneous Services"
+    }
+  ]
+} 

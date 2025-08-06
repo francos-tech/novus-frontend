@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Download, Send, Save, Sun, Moon, User } from 'lucide-react'
 import { Input } from '@/components/ui/input'
-import ContractorForm from '@/app/(internal)/quotes/new/contractor-form'
+import ContractorForm from '@/app/(internal)/quotes/new2/contractor-form'
 
 export default function PrefilledContractorFormPage() {
   const [formData, setFormData] = useState<any>({})

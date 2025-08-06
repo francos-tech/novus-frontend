@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Download, Send, Save, Sun, Moon, User } from 'lucide-react'
 import { Input } from '@/components/ui/input'
-import ContractorForm from '@/app/(internal)/quotes/new/contractor-form'
+import ContractorForm from '@/app/(internal)/quotes/new2/contractor-form'
 
 export default function PublicContractorFormPage() {
   const [formData, setFormData] = useState<any>({})
@@ -193,7 +193,7 @@ export default function PublicContractorFormPage() {
           <div className="w-full bg-card border-b border-border px-6 py-4">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
               <div className="flex items-center gap-4">
-                <h1 className="text-xl font-semibold text-foreground">Novus Underwriters</h1>
+                <h1 className="text-xl font-semibold text-foreground"></h1>
                 <span className="text-sm text-muted-foreground">Public Application</span>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function PublicContractorFormPage() {
         <div className="w-full bg-card border-b border-border px-6 py-4">
           <div className="max-w-6xl mx-auto flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <h1 className="text-xl font-semibold text-foreground">Novus Underwriters</h1>
+              <h1 className="text-xl font-semibold text-foreground"></h1>
               <span className="text-sm text-muted-foreground">Public Application</span>
             </div>
             <Button
