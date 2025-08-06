@@ -31,7 +31,7 @@ export default function NewQuotePage() {
         <div className="flex items-center gap-4">
           <div>
             <h1 className="text-2xl font-bold">
-              Contractors Supplemental Application
+              General Liability Quote
             </h1>
             <p className="text-muted-foreground">
               Create a new insurance quote
