@@ -1,3 +1,10 @@
+export interface QuoteHistoryItem {
+  id: string;
+  response_data?: GeneralLiabilityQuote;
+  created_at?: string;
+  policy_type?: string;
+}
+
 export interface GeneralLiabilityQuote {
   cnfPolicyService: {
     cnfPolicyHeader: {

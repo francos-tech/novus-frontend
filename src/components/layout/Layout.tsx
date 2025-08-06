@@ -54,13 +54,13 @@ export default function Layout({
   }, [isDark])
 
   const menuItems = [
-    { icon: BarChart3, label: 'Dashboard', path: '/dashboard', group: 'dashboard' },
+    // { icon: BarChart3, label: 'Dashboard', path: '/dashboard', group: 'dashboard' },
     { icon: FileText, label: 'Quotes', path: '/quotes', group: 'quotes' },
-    { icon: Users, label: 'Users', path: '/users', group: 'users' },
-    { icon: Zap, label: 'Integrations', path: '/integrations/api', group: 'integrations' },
-    { icon: CheckSquare, label: 'Tasks', path: '/tasks', group: 'tasks' },
-    { icon: DollarSign, label: 'Finance', path: '/finance/overview', group: 'finance' },
-    { icon: TrendingUp, label: 'Productivity', path: '/productivity/roi', group: 'productivity' }
+    // { icon: Users, label: 'Users', path: '/users', group: 'users' },
+    // { icon: Zap, label: 'Integrations', path: '/integrations/api', group: 'integrations' },
+    // { icon: CheckSquare, label: 'Tasks', path: '/tasks', group: 'tasks' },
+    // { icon: DollarSign, label: 'Finance', path: '/finance/overview', group: 'finance' },
+    // { icon: TrendingUp, label: 'Productivity', path: '/productivity/roi', group: 'productivity' }
   ]
 
   // Get current active group based on path
@@ -102,16 +102,16 @@ export default function Layout({
         submenu: [
           { label: 'All Quotes', active: pathname === '/quotes', link: '/quotes' },
           { label: 'New Quote', active: pathname === '/quotes/new', link: '/quotes/new' },
-          { label: 'Quote History', active: pathname === '/quotes/history', link: '/quotes/history' },
-          { label: 'Templates', active: false },
-          { label: 'Compare Quotes', active: false }
+          // { label: 'Quote History', active: pathname === '/quotes/history', link: '/quotes/history' },
+          // { label: 'Templates', active: false },
+          // { label: 'Compare Quotes', active: false }
         ],
         quickSummary: [
-          { icon: FileText, label: 'Active Quotes', value: showValues ? '24' : '**', color: 'bg-blue-500' },
-          { icon: Users, label: 'Leads', value: showValues ? '42' : '**', color: 'bg-purple-500' },
-          { icon: CheckSquare, label: 'Tasks', value: showValues ? '8' : '**', color: 'bg-green-500' },
-          { icon: DollarSign, label: 'Finance', value: showValues ? '****' : '****', color: 'bg-green-500' },
-          { icon: TrendingUp, label: 'ROI', value: showValues ? '**%' : '**%', color: 'bg-orange-500' }
+          { icon: FileText, label: 'Active Quotes', value: showValues ? '0' : '**', color: 'bg-blue-500' },
+          { icon: Users, label: 'Leads', value: showValues ? '0' : '**', color: 'bg-purple-500' },
+          { icon: CheckSquare, label: 'Tasks', value: showValues ? '0' : '**', color: 'bg-green-500' },
+          { icon: DollarSign, label: 'Finance', value: showValues ? '0' : '****', color: 'bg-green-500' },
+          { icon: TrendingUp, label: 'ROI', value: showValues ? '0%' : '**%', color: 'bg-orange-500' }
         ]
       }
     }

@@ -3,14 +3,16 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { RootState } from '../store';
 import {
   QuoteFormData,
-  QuoteHistoryItem,
   setSubmitError,
   setSubmitting,
   setSelectedQuote,
   setLoading,
+  updateQuoteHistory,
+  setLastSubmittedQuoteId,
 } from '../quote/quoteSlice';
 import { message } from 'antd';
-import { GeneralLiabilityQuote } from '@/types/general-liability-quote';
+import { GeneralLiabilityQuote, QuoteHistoryItem } from '@/types/general-liability-quote';
+import { redirect } from 'next/navigation';
 
 export interface SubmitQuoteRequest {
   quoteData: QuoteFormData;
@@ -24,13 +26,6 @@ export interface SubmitQuoteResponse {
   premium?: number;
   totalExposure?: number;
   createdAt: string;
-}
-
-export interface GetQuoteHistoryResponse {
-  quotes: QuoteHistoryItem[];
-  total: number;
-  page: number;
-  limit: number;
 }
 
 export interface UpdateQuoteRequest {
@@ -91,11 +86,11 @@ export const quoteApi = createApi({
         try {
           dispatch(setSubmitting(true));
           const { data } = await queryFulfilled;
-          console.log(data);
           message.open({
             type: 'success',
             content: `Quote submitted successfully! Quote #${data.quoteNumber}`,
           });
+          dispatch(setLastSubmittedQuoteId(data.id));
         } catch (error: any) {
           dispatch(
             setSubmitError(
@@ -117,11 +112,11 @@ export const quoteApi = createApi({
 
     // Get quote history
     getQuoteHistory: builder.query<
-      GetQuoteHistoryResponse,
+    QuoteHistoryItem[],
       { page?: number; limit?: number }
     >({
       query: (params) => ({
-        url: '/quotes',
+        url: '/quotes/cfins/history',
         method: 'GET',
         params: {
           page: params.page || 1,
@@ -129,6 +124,21 @@ export const quoteApi = createApi({
         },
       }),
       providesTags: ['QuoteHistory'],
+      async onQueryStarted(_, { queryFulfilled, dispatch }) {
+        try {
+          dispatch(setLoading(true));
+          const { data } = await queryFulfilled;
+          dispatch(updateQuoteHistory(data));
+          dispatch(setLoading(false));
+        } catch (error: any) {
+          message.open({
+            type: 'error',
+            content:
+              error?.data?.message ||
+              'Failed to update quote. Please try again.',
+          });
+        }
+      },
     }),
 
     // Get quote by ID
@@ -231,4 +241,5 @@ export const {
   useUpdateQuoteMutation,
   useDeleteQuoteMutation,
   useCalculatePremiumMutation,
+  useLazyGetQuoteHistoryQuery,
 } = quoteApi;

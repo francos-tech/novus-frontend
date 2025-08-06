@@ -1,5 +1,5 @@
 export { default as quoteReducer } from './quoteSlice';
-export type { QuoteState, QuoteFormData, QuoteHistoryItem } from './quoteSlice';
+export type { QuoteState, QuoteFormData } from './quoteSlice';
 export {
   setCurrentQuote,
   updateQuoteForm,

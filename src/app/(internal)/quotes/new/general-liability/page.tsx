@@ -7,15 +7,22 @@ import { Save, Send, ArrowLeft } from "lucide-react";
 import ContractorForm, { GeneralLiabilityRef } from "./ContractorForm";
 import { Flex } from "antd";
 import { Typography } from "antd";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useQuotes } from "@/hooks/useQuotes";
 
 const { Title } = Typography;
 
 export default function NewQuotePage() {
   const router = useRouter();
-  const { isSubmittingQuote, submitQuote } = useQuotes();
+  const { isSubmittingQuote, submitQuote, lastSubmittedQuoteId, clearLastSubmittedQuoteId } = useQuotes();
   const formRef = useRef<GeneralLiabilityRef>(null);
+
+  useEffect(() => {
+    if (lastSubmittedQuoteId) {
+      clearLastSubmittedQuoteId();
+      router.push(`/quotes/${lastSubmittedQuoteId}`);
+    }
+  }, [lastSubmittedQuoteId]);
 
   return (
     <div className="space-y-6">

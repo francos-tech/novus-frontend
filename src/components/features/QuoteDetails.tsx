@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Badge, Button, Separator } from './ui'
+import { Card, Badge, Button, Separator } from '@/components/ui'
 
 interface QuoteItem {
   id: string

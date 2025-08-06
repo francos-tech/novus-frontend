@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import MetricCard from '@/components/MetricCard'
+import MetricCard from '@/components/ui/MetricCard'
 import { 
   Users, 
   Target, 

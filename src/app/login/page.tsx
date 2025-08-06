@@ -13,7 +13,7 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      redirect('/dashboard');
+      redirect('/quotes');
     }
   }, [isAuthenticated]);
 

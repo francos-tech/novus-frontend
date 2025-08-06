@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { GeneralLiabilityQuote } from '@/types/general-liability-quote';
+import { GeneralLiabilityQuote, QuoteHistoryItem } from '@/types/general-liability-quote';
 
 export interface QuoteFormData {
   account: {
@@ -37,19 +37,6 @@ export interface QuoteFormData {
   };
 }
 
-export interface QuoteHistoryItem {
-  id: string;
-  quoteNumber: string;
-  insuredName: string;
-  effectiveDate: string;
-  expirationDate: string;
-  status: 'draft' | 'submitted' | 'approved' | 'rejected';
-  createdAt: string;
-  updatedAt: string;
-  premium?: number;
-  totalExposure?: number;
-}
-
 export interface QuoteState {
   currentQuote: QuoteFormData | null;
   quoteHistory: QuoteHistoryItem[];
@@ -57,6 +44,7 @@ export interface QuoteState {
   isLoading: boolean;
   isSubmitting: boolean;
   submitError: string | null;
+  lastSubmittedQuoteId: string | null;
   lastSubmittedQuote: QuoteFormData | null;
 }
 
@@ -67,6 +55,7 @@ const initialState: QuoteState = {
   isLoading: false,
   isSubmitting: false,
   submitError: null,
+  lastSubmittedQuoteId: null,
   lastSubmittedQuote: null,
 };
 
@@ -95,6 +84,9 @@ const quoteSlice = createSlice({
     },
     setLastSubmittedQuote: (state, action: PayloadAction<QuoteFormData>) => {
       state.lastSubmittedQuote = action.payload;
+    },
+    setLastSubmittedQuoteId: (state, action: PayloadAction<string | null>) => {
+      state.lastSubmittedQuoteId = action.payload;
     },
     addToQuoteHistory: (state, action: PayloadAction<QuoteHistoryItem>) => {
       state.quoteHistory.unshift(action.payload);
@@ -130,6 +122,7 @@ export const {
   setSelectedQuote,
   clearSelectedQuote,
   setLoading,
+  setLastSubmittedQuoteId,
 } = quoteSlice.actions;
 
 export default quoteSlice.reducer; 
