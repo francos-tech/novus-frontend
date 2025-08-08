@@ -1,6 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import { setToken } from '../auth/authSlice';
-import { RootState } from '../store';
+import { baseQueryWithAuth } from './baseQuery';
 import { message } from 'antd';
 
 export interface SignInRequest {
@@ -15,17 +15,7 @@ export interface SignInResponse {
 // Create the auth API slice
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
-    prepareHeaders: (headers, { getState }) => {
-      // Get token from state and add to headers if available
-      const token = (getState() as RootState).auth?.token;
-      if (token) {
-        headers.set('authorization', `Bearer ${token}`);
-      }
-      return headers;
-    },
-  }),
+  baseQuery: baseQueryWithAuth,
   tagTypes: ['Auth'],
   endpoints: (builder) => ({
     signIn: builder.mutation<SignInResponse, SignInRequest>({

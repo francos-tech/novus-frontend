@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { RootState } from '../store';
+import { createApi } from '@reduxjs/toolkit/query/react';
+import { baseQueryWithAuth } from './baseQuery';
 import {
   QuoteFormData,
   setSubmitError,
@@ -44,18 +44,7 @@ export interface UpdateQuoteResponse {
 // Create the quote API slice
 export const quoteApi = createApi({
   reducerPath: 'quoteApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
-    prepareHeaders: (headers, { getState }) => {
-      // Get token from state and add to headers if available
-      const token = (getState() as RootState).auth?.token;
-      if (token) {
-        headers.set('authorization', `Bearer ${token}`);
-      }
-      headers.set('Content-Type', 'application/json');
-      return headers;
-    },
-  }),
+  baseQuery: baseQueryWithAuth,
   tagTypes: ['Quote', 'QuoteHistory'],
   endpoints: (builder) => ({
     // Submit a new quote
